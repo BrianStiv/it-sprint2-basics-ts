@@ -108,29 +108,33 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
 // Repte 5:
 // Consulta la [documentació de TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) i determina com canviar defaultUser perquè el test passi.
 // */
+ describe("Problema d'assignació de tipus a variables", () => {
+   interface User {
+     id: number;
+     firstName: string;
+     lastName: string;
+     isAdmin: boolean;
+   }
 
-// describe("Problema d'assignació de tipus a variables", () => {
-//   interface User {
-//     id: number;
-//     firstName: string;
-//     lastName: string;
-//     isAdmin: boolean;
-//   }
+   /**
+    * Com ens assegurem que defaultUser sigui de tipus User
+    * EN AQUESTA LÍNIA - no més endavant al codi?
+    */
+   const defaultUser: User = {
+   id: 1,
+   firstName: "Default",
+   lastName: "User",
+   isAdmin: false,
+ };
 
-//   /**
-//    * Com ens assegurem que defaultUser sigui de tipus User
-//    * EN AQUESTA LÍNIA - no més endavant al codi?
-//    */
-//   const defaultUser = {};
+   const getUserId = (user: User) => {
+     return user.id;
+   };
 
-//   const getUserId = (user: User) => {
-//     return user.id;
-//   };
-
-//   it("Ha d'obtenir l'identificador de l'usuari", () => {
-//     expect(getUserId(defaultUser)).toEqual(1);
-//   });
-// });
+   it("Ha d'obtenir l'identificador de l'usuari", () => {
+     expect(getUserId(defaultUser)).toEqual(1);
+   });
+ });
 
 // /*
 // Repte 6:
