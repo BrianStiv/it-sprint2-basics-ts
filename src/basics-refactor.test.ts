@@ -377,21 +377,25 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
 // Pista: hi ha diverses maneres de resoldre aquest repte, prova diferents opcions!
 // */
 
-// describe("Problema de blocs catch", () => {
-//   const tryCatchDemo = (state: "fail" | "succeed") => {
-//     try {
-//       if (state === "fail") {
-//         throw new Error("Failure!");
-//       }
-//     } catch (e) {
-//       return e.message;
-//     }
-//   };
+ describe("Problema de blocs catch", () => {
+   const tryCatchDemo = (state: "fail" | "succeed") => {
+     try {
+       if (state === "fail") {
+         throw new Error("Failure!");
+       }
+     } catch (e) {
+        if (e instanceof Error) {  // instanceof Error hace type narrowing Después de ese if, TypeScript sabe que e es de tipo Error.
+        return e.message;
+        } else {
+         return "Unknown error";
+          }
+   }
+   };
 
-//   it("Ha de retornar el missatge quan falla", () => {
-//     expect(tryCatchDemo("fail")).toEqual("Failure!");
-//   });
-// });
+   it("Ha de retornar el missatge quan falla", () => {
+     expect(tryCatchDemo("fail")).toEqual("Failure!");
+   });
+ });
 
 // /*
 // Repte 14:
