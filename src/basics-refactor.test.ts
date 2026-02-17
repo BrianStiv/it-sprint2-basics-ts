@@ -352,17 +352,24 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
 // Escriu la funció perquè els tests passin.
 // */
 
-// describe("Problema de filtratge amb typeof", () => {
-//   const coerceAmount = (amount: number | { amount: number }) => {};
+ describe("Problema de filtratge amb typeof", () => {
+   const coerceAmount = (amount: number | { amount: number }) => {
+     if(typeof amount === 'number'){
+      return amount;
+    }else{
+      return amount.amount
+    }
+   };
+  
 
-//   it("Ha de retornar l'import quan es passa un objecte", () => {
-//     expect(coerceAmount({ amount: 20 })).toEqual(20);
-//   });
+   it("Ha de retornar l'import quan es passa un objecte", () => {
+     expect(coerceAmount({ amount: 20 })).toEqual(20);
+   });
 
-//   it("Ha de retornar l'import quan es passa un nombre", () => {
-//     expect(coerceAmount(20)).toEqual(20);
-//   });
-// });
+   it("Ha de retornar l'import quan es passa un nombre", () => {
+     expect(coerceAmount(20)).toEqual(20);
+   });
+ });
 
 // /*
 // Repte 13:
