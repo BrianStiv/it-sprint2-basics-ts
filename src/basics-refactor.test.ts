@@ -496,24 +496,24 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
 // La funció 'onFocusChange' is actualment 'unknown'. Visita la documentació de TypeScript i esbrina el tipus apropiat per la funció.
 // */
 
-// describe("Problema de tipus de funció", () => {
+ describe("Problema de tipus de funció", () => {
 
-//   const addListener = (onFocusChange: unknown) => {
-//     window.addEventListener("focus", () => {
-//       onFocusChange(true);
-//     });
+   const addListener = (onFocusChange: (isFocused: boolean) => void) => {     //Tipado de funciones (param: Tipo) => ReturnType 
+     window.addEventListener("focus", () => {
+       onFocusChange(true);
+     });
 
-//     window.addEventListener("blur", () => {
-//       onFocusChange(false);
-//     });
-//   };
+     window.addEventListener("blur", () => {
+       onFocusChange(false);
+     });
+   };
 
-//   addListener((isFocused) => {
-//     console.log({ isFocused });
+   addListener((isFocused) => {
+     console.log({ isFocused });
 
-//     type tests = [Expect<Equal<typeof isFocused, boolean>>];
-//   });
-// });
+     type tests = [Expect<Equal<typeof isFocused, boolean>>];
+   });
+ });
 
 // /*
 // Repte 18:
