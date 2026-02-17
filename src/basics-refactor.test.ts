@@ -404,30 +404,31 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
 //  fer-ho més DRY?
 // */
 
-// describe("Problema d'herència amb extends", () => {
-//   interface User {
-//     id: string;
-//     firstName: string;
-//     lastName: string;
-//   }
+ describe("Problema d'herència amb extends", () => {
+   interface General{   // interface General y las otros inteface extienden de general, parecido a las clases y clases hijas
+    id: string
+   }
+   
+  interface User extends General {
+     firstName: string;
+     lastName: string;
+   }
 
-//   interface Post {
-//     id: string;
-//     title: string;
-//     body: string;
-//   }
+   interface Post extends General {
+     title: string;
+     body: string;
+   }
 
-//   interface Comment {
-//     id: string;
-//     comment: string;
-//   }
+   interface Comment extends General {
+     comment: string;
+   }
 
-//   type tests = [
-//     Expect<Equal<User, { id: string; firstName: string; lastName: string }>>,
-//     Expect<Equal<Post, { id: string; title: string; body: string }>>,
-//     Expect<Equal<Comment, { id: string; comment: string }>>
-//   ];
-// });
+   type tests = [
+     Expect<Equal<User, { id: string; firstName: string; lastName: string }>>,
+     Expect<Equal<Post, { id: string; title: string; body: string }>>,
+     Expect<Equal<Comment, { id: string; comment: string }>>
+   ];
+ });
 
 // /*
 // Repte 15:
