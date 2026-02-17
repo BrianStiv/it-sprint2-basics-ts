@@ -474,22 +474,22 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
 // Llegeix la documentació de TypeScript sobre Utility Types per veure què pots trobar.
 // */
 
-// describe("Problema d'Omit i Pick", () => {
-//   interface User {
-//     id: string;
-//     firstName: string;
-//     lastName: string;
-//   }
+ describe("Problema d'Omit i Pick", () => {
+   interface User {
+     id: string;
+     firstName: string;
+     lastName: string;
+   }
 
-//   /**
-//    * Com creem un nou tipus d'objecte amb NOMÉS les propietats
-//    * firstName i lastName de User?
-//    */
+   /**
+    * Com creem un nou tipus d'objecte amb NOMÉS les propietats
+    * firstName i lastName de User?
+    */
 
-//   type MyType = unknown;
+   type MyType = Pick<User, "firstName" | "lastName">;  // Utility Type Pick
 
-//   type tests = [Expect<Equal<MyType, { firstName: string; lastName: string }>>];
-// });
+   type tests = [Expect<Equal<MyType, { firstName: string; lastName: string }>>];
+ });
 
 // /*
 // Repte 17:
