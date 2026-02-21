@@ -6,18 +6,20 @@
 // Llegeix la documentació de TypeScript sobre Utility Types i esbrina com utilitzar ReturnType per extreure el tipus de retorn de myFunc.
 // Pista: pots utilitzar typeof per obtenir el tipus d'una variable o funció.
 // */
-// describe("Transformació: obtenir el tipus de retorn d'una funció", () => {
-//   const myFunc = () => {
-//     return "hello";
-//   };
 
-//   /**
-//    * Com podem extreure MyFuncReturn a partir de myFunc?
-//   //  */
-//   type MyFuncReturn = unknown;
+ describe("Transformació: obtenir el tipus de retorn d'una funció", () => {
+   const myFunc = () => {
+     return "hello";
+   };
 
-//   type tests = [Expect<Equal<MyFuncReturn, string>>];
-// });
+   /**
+    * Com podem extreure MyFuncReturn a partir de myFunc?
+   //  */
+   //type MyFuncReturn = unknown;
+   type MyFuncReturn = ReturnType<typeof myFunc>;
+
+   type tests = [Expect<Equal<MyFuncReturn, string>>];
+ });
 
 // /*
 // Repte 2:
