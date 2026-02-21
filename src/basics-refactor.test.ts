@@ -27,10 +27,11 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
   type addTwoNumbersType = {
     first: number;
     second: number
-   it("Ha de sumar els dos nombres", () => {
-     const addTwoNumbers = (params: addTwoNumbersType) => {
-       return params.first + params.second;
-     };
+  }
+    const addTwoNumbers = (params: addTwoNumbersType) => {
+    return params.first + params.second;
+    };
+  it("Ha de sumar els dos nombres", () => {
      expect(
        addTwoNumbers({
          first: 2,
