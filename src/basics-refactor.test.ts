@@ -78,9 +78,9 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
        last: "Simmons",
      });
 
-//     expect(name).toEqual("Jen Simmons");
-//   });
-// });
+     expect(name).toEqual("Jen Simmons");
+   });
+ });
 
 // /*
 // Repte 4:
@@ -226,7 +226,7 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
     * Com ens assegurem que makeUser SEMPRE
     * retorni un usuari?
     */
-   const makeUser = () => {
+   const makeUser = () User => {
      return {
       id: 1,
       firstName: 'Brian,
@@ -500,7 +500,8 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
  describe("Problema de tipus de funció", () => {
 
    const addListener = (onFocusChange: (isFocused: boolean) => void) => {     //Tipado de funciones (param: Tipo) => ReturnType 
-     window.addEventListener("focus", () => {
+    if (typeof window == 'undefined') return;    // evita el error ReferenceError: window is not defined 
+    window.addEventListener("focus", () => { 
        onFocusChange(true);
      });
 
