@@ -49,7 +49,7 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
    expectTypeOf(addTwoNumbers).parameter(0).toBeObject({first:number,second:number});
 
 
-// });
+});
 
 // /*
 // Repte 3:
@@ -226,10 +226,10 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
     * Com ens assegurem que makeUser SEMPRE
     * retorni un usuari?
     */
-   const makeUser = () User => {
+   const makeUser = (): User => {
      return {
       id: 1,
-      firstName: 'Brian,
+      firstName: 'Brian',
       lastName: 'Cueva',
       role: 'super-admin',
       posts:[{ id: 1,title: 'post1' },{ id: 2,title: 'post2'},{id: 3,title: 'post3'}]
@@ -283,7 +283,7 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
 // */
 
  describe("Problema de Set", () => {
-   const guitarists = new Set<String>();
+   const guitarists = new Set<string>();
 
    guitarists.add("Jimi Hendrix");
    guitarists.add("Eric Clapton");
