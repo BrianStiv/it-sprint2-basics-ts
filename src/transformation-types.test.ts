@@ -107,29 +107,31 @@
 // Repte 5:
 // Utilitza indexed access types per obtenir el tipus d'una propietat concreta d'un objecte.
 // */
-// describe("Transformació: indexed access amb objectes", () => {
-//   const fakeDataDefaults = {
-//     String: "Default string",
-//     Int: 1,
-//     Float: 1.14,
-//     Boolean: true,
-//     ID: "id",
-//   };
+ describe("Transformació: indexed access amb objectes", () => {
+   const fakeDataDefaults = {
+     String: "Default string",
+     Int: 1,
+     Float: 1.14,
+     Boolean: true,
+     ID: "id",
+   };
 
-//   type StringType = unknown;
-//   type IntType = unknown;
-//   type FloatType = unknown;
-//   type BooleanType = unknown;
-//   type IDType = unknown;
+   type fakeData = typeof fakeDataDefaults;
 
-//   type tests = [
-//     Expect<Equal<StringType, string>>,
-//     Expect<Equal<IntType, number>>,
-//     Expect<Equal<FloatType, number>>,
-//     Expect<Equal<BooleanType, boolean>>,
-//     Expect<Equal<IDType, string>>,
-//   ];
-// });
+   type StringType = unknown;
+   type IntType = unknown;
+   type FloatType = unknown;
+   type BooleanType = unknown;
+   type IDType = unknown;
+
+   type tests = [
+     Expect<Equal<StringType, string>>,
+     Expect<Equal<IntType, number>>,
+     Expect<Equal<FloatType, number>>,
+     Expect<Equal<BooleanType, boolean>>,
+     Expect<Equal<IDType, string>>,
+   ];
+ });
 
 // /*
 // Repte 6:
