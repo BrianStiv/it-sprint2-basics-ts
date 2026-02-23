@@ -304,25 +304,26 @@ describe("Transformació: terminologia de tipus", () => {
 // Repte 12:
 // Extreu el tipus del discriminador d'una discriminated union.
 // */
-// describe("Transformació: obtenir el tipus del discriminador d'una discriminated union", () => {
-//   type Event =
-//     | {
-//         type: "click";
-//         event: MouseEvent;
-//       }
-//     | {
-//         type: "focus";
-//         event: FocusEvent;
-//       }
-//     | {
-//         type: "keydown";
-//         event: KeyboardEvent;
-//       };
+ describe("Transformació: obtenir el tipus del discriminador d'una discriminated union", () => {
+   type Event =
+     | {
+         type: "click";
+         event: MouseEvent;
+       }
+     | {
+         type: "focus";
+         event: FocusEvent;
+       }
+     | {
+         type: "keydown";
+         event: KeyboardEvent;
+       };
 
-//   type EventType = unknown;
+   //type EventType = unknown;
+  type EventType = Event["type"];
 
-//   type tests = [Expect<Equal<EventType, "click" | "focus" | "keydown">>];
-// });
+   type tests = [Expect<Equal<EventType, "click" | "focus" | "keydown">>];
+ });
 
 // /* 
 // Repte 13:
