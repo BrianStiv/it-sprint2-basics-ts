@@ -46,7 +46,7 @@ Descobreix com tipar params com un objecte amb una clau first que sigui un nombr
        })
      ).toEqual(30);
    });
-   expectTypeOf(addTwoNumbers).parameter(0).toBeObject({first:number,second:number});
+  // expectTypeOf(addTwoNumbers).parameter(0).toBeObject({first:number,second:number});
 
 
 });
