@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "types": [
-      "vitest/importMeta"
+      "vitest/globals"
     ],
     "target": "es2020",
     "module": "ES2022",
